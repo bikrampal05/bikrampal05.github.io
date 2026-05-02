@@ -343,14 +343,17 @@ a:hover {
 }
 
 .profiles {
+  margin-top: 6px;     /* small separation from email */
   display: flex;
-  align-items: center;
-  gap: 1cm;   /* exact spacing */
-  flex-wrap: nowrap; /* prevents breaking into next line */
+  gap: 1cm;
 }
 
 .icon {
   height: 16px;
   vertical-align: middle;
   margin-right: 6px;
+}
+
+.info p {
+  margin: 2px 0;   /* reduce vertical spacing */
 }
