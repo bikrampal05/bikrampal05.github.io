@@ -341,3 +341,16 @@ a:hover {
   margin-top: 8px;
   text-align: center;
 }
+
+.profiles {
+  display: flex;
+  align-items: center;
+  gap: 1cm;   /* exact spacing */
+  flex-wrap: nowrap; /* prevents breaking into next line */
+}
+
+.icon {
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
