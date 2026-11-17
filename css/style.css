@@ -7,6 +7,7 @@
   src: url("font/Amsterdamer-Garamont-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -14,6 +15,7 @@
   src: url("font/Amsterdamer-Garamont-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -21,6 +23,7 @@
   src: url("font/AmsterdamerGaramontBold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -28,6 +31,7 @@
   src: url("font/AmsterdamerGaramontBoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
 }
 
 /* ===============================
@@ -35,7 +39,7 @@
    =============================== */
 
 body {
-  font-family: "Amsterdamer Garamont", "Noto Serif Bengali", serif;
+  font-family: "Amsterdamer Garamont", Georgia, "Noto Serif Bengali", serif;
   font-size: 19px;
   line-height: 1.55;
   background: #ffffff;
@@ -61,18 +65,28 @@ body {
 }
 
 .photo {
-  width: 180px;
+  width: 230px;
   vertical-align: top;
 }
 
 .photo img {
-  width: 160px;
+  width: 230px;
   height: auto;
+  display: block;
 }
 
 .info {
   vertical-align: top;
   padding-left: 25px;
+}
+
+.info p {
+  margin: 2px 0;
+}
+
+.affiliation,
+.email {
+  margin: 0;
 }
 
 h1 {
@@ -82,12 +96,35 @@ h1 {
 
 .position {
   font-style: italic;
-  margin: 0 0 10px 0;
+  margin: 0 0 0.2em 0;
 }
 
-.affiliation,
-.email {
-  margin: 0;
+.correspondence {
+  margin-top: 0.2em;
+}
+
+.logo {
+  width: 100px;
+  vertical-align: top;
+  text-align: right;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.profiles {
+  margin-top: 6px;
+  display: flex;
+  gap: 1cm;
+}
+
+.icon {
+  height: 16px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 6px;
 }
 
 /* ===============================
@@ -113,8 +150,13 @@ li {
   margin-bottom: 6px;
 }
 
+.bengali {
+  font-family: "Noto Serif Bengali", serif;
+  font-size: 0.95em;
+}
+
 /* ===============================
-   Links (Oxford style)
+   Links
    =============================== */
 
 a {
@@ -125,58 +167,27 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.position {
-  margin-bottom: 0.2em;
-}
 
-.correspondence {
-  margin-top: 0.2em;
-}
-
-
-
-
-
-.photo {
-  width: 120px;
-  vertical-align: top;
-  text-align: right;
-}
-
-.photo img {
-  width: 230px;
-  height: auto;
-}
-
-
-
-.logo {
-  width: 100px;
-  vertical-align: top;
-  text-align: right;
-}
-
-.logo img {
-  width: 100px;
-  height: auto;
-}
-
-.bengali {
-  font-family: "Noto Serif Bengali", serif;
-  font-size: 0.95em;
-}
-
+/* ===============================
+   Text + picture row (football paragraph)
+   =============================== */
 
 .info-picture {
   width: 97.5%;
   border-collapse: collapse;
 }
 
+.info-picture .image {
+  width: 200px;
+  vertical-align: top;
+  padding-left: 20px;
+}
+
 .info-picture .image img {
   width: 200px;
   height: auto;
+  display: block;
 }
-
 
 /* ===============================
    Navigation bar (academic style)
@@ -198,6 +209,7 @@ a:hover {
 .nav a:hover {
   text-decoration: underline;
 }
+
 .nav .current {
   font-weight: bold;
 }
@@ -210,7 +222,7 @@ a:hover {
   display: flex;
   align-items: flex-start;
   gap: 30px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .research-text {
@@ -222,46 +234,18 @@ a:hover {
 }
 
 .research-figure img {
-  width: 300px;     /* adjust if needed */
+  width: 300px;
   height: auto;
- }
-
+}
 
 /* ===============================
-   Gallery grid (3-column academic)
+   Research list
    =============================== */
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 30px;
-}
-
-.gallery-grid figure {
-  margin: 0;
-  text-align: center;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  border: 0px solid #ccc;
-  padding: 4px;
-  background: #fff;
-}
-
-.gallery-grid figcaption {
-  margin-top: 0px;
-  font-size: 0.9em;
-  color: #333;
-  line-height: 1.3;
-}
-
 
 .research-list {
   list-style-type: none;
   padding: 0;
+  margin-top: 20px;
 }
 
 .research-list li {
@@ -276,11 +260,6 @@ a:hover {
 
 .research-list a:hover {
   text-decoration: underline;
-}
-
-
-.research-list {
-  margin-top: 20px;
 }
 
 .research-item {
@@ -316,6 +295,37 @@ a:hover {
   margin-top: 10px;
 }
 
+/* ===============================
+   Gallery
+   =============================== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border: 0 solid #ccc;
+  padding: 4px;
+  background: #fff;
+}
+
+.gallery-grid figcaption {
+  margin-top: 0;
+  font-size: 0.9em;
+  color: #333;
+  line-height: 1.3;
+}
+
 .gallery-vertical {
   display: flex;
   flex-direction: column;
@@ -326,7 +336,7 @@ a:hover {
 
 .gallery-vertical figure {
   width: 100%;
-  max-width: 700px;   /* controls overall size */
+  max-width: 700px;
   margin: 0;
 }
 
@@ -344,23 +354,6 @@ a:hover {
   text-align: center;
 }
 
-.profiles {
-  margin-top: 6px;     /* small separation from email */
-  display: flex;
-  gap: 1cm;
-}
-
-.icon {
-  height: 16px;
-  vertical-align: middle;
-  margin-right: 6px;
-}
-
-.info p {
-  margin: 2px 0;   /* reduce vertical spacing */
-}
-
-
 .gallery-vertical video {
   display: block;
   height: 450px;
@@ -370,17 +363,28 @@ a:hover {
   border-radius: 6px;
 }
 
-
-
 /* ===============================
-   Mobile layout (phones & small tablets)
+   Visitor counter
    =============================== */
 
-img {
-  max-width: 100%;
+.flagcounter {
+  margin-top: 20px;
 }
 
+/* ===============================
+   MOBILE (phones & small tablets)
+   Keep this at the END of the file
+   =============================== */
+
 @media (max-width: 700px) {
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
 
   body {
     font-size: 17px;
@@ -391,19 +395,19 @@ img {
     margin: 16px auto;
   }
 
-  /* Navigation: wrap neatly */
+  /* Navigation wraps neatly */
   .nav {
     line-height: 2;
   }
+
   .nav a {
-    margin-right: 14px;
     display: inline-block;
+    margin-right: 14px;
   }
 
-  /* Header: stack photo, info, logo vertically */
+  /* Header: stack photo, info, logo */
   .header-table,
   .header-table tbody,
-  .header-table tr,
   .header-table td {
     display: block;
     width: auto;
@@ -421,14 +425,23 @@ img {
     text-align: center;
   }
 
+  .photo,
+  .logo {
+    width: auto;
+  }
+
   .photo img {
     width: 180px;
     max-width: 60%;
-    margin-bottom: 12px;
+    margin: 0 auto 12px auto;
   }
 
   .info {
     padding-left: 0;
+  }
+
+  .info p {
+    overflow-wrap: anywhere;
   }
 
   h1 {
@@ -445,39 +458,48 @@ img {
     order: 3;
     margin-top: 14px;
   }
+
   .logo img {
+    display: block;
     width: 80px;
+    margin: 0 auto;
   }
 
-  /* "Football/music" paragraph + Messi image: stack */
+  /* Football paragraph + Messi image: stack */
   .info-picture,
   .info-picture tbody,
   .info-picture tr,
   .info-picture td {
     display: block;
     width: 100%;
+    padding-left: 0;
   }
+
   .info-picture .image {
+    width: 100%;
+    padding-left: 0;
     text-align: center;
   }
+
   .info-picture .image img {
     width: 180px;
     max-width: 70%;
-    margin-top: 8px;
+    margin: 8px auto 0 auto;
   }
 
-  /* Other pages (research, gallery, etc.) */
+  /* Other pages */
   .research-block {
     flex-direction: column;
     gap: 15px;
   }
+
   .research-figure img {
     width: 100%;
     max-width: 400px;
   }
 
   .gallery-grid {
-    grid-template-columns: 1fr;   /* use repeat(2, 1fr) for two columns */
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
