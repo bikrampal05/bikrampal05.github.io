@@ -189,6 +189,17 @@ a:hover {
   display: block;
 }
 
+/* Desktop: never let these images be shrunk by other rules */
+.photo img,
+.info-picture .image img {
+  max-width: none;
+  flex-shrink: 0;
+}
+
+.info-picture .image {
+  min-width: 220px;
+}
+
 /* ===============================
    Navigation bar (academic style)
    =============================== */
